@@ -1,4 +1,4 @@
-package meongj_programmers_귤고르기;
+package week_12_230319_230325.meongj;
 
 import java.util.*;
 
