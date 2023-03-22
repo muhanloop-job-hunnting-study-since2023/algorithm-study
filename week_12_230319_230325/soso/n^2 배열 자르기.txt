@@ -1,0 +1,39 @@
+import java.util.List;
+import java.util.ArrayList;
+
+class Solution {
+    //규칙성을 찾아보자
+    //1
+    //12
+    //22
+    //123
+    //223
+    //333
+    //1234
+    //2234
+    //3334
+    //4444
+    //answer에 배열 사이즈는 n에 제곱만큼 만들면 됩니다.
+    //1를1번담고 증가하며n까지담고,2를2번담고 증가하며n까지담고,3을3번담고 증가하며n까지담고,4를 4번담고 증가하며n까지담고
+    //---------------------이렇게 풀면 안됩니다. 실행시간 초과함------------------
+    public int[] solution(int n, long left, long right) {
+        /*int[] array = new int[n*n];
+		List<Integer> list = new ArrayList<>();
+		for(int i=1; i<=n; i++){
+			for(int j=1; j<=n; j++){
+				if(j<=i){
+					list.add(i);
+				}else{
+					list.add(j);
+				}
+			}
+		}
+		int[] answer = new int[(int) right- (int) left + 1];
+		for(int i= (int) left; i<=right; i++){
+			answer[i-(int) left] = list.get(i);
+		}
+
+		return answer;
+        */
+    }
+}

@@ -1,0 +1,21 @@
+import java.lang.Integer;
+
+class Solution {
+    public String solution(String s) {
+        String answer = "";
+        String[] arr = s.split(" ");
+        int minValue = Integer.parseInt(arr[0]);
+        int maxValue = Integer.parseInt(arr[0]);
+        for (int i = 1; i < arr.length; i++) {
+        if (Integer.parseInt(arr[i]) < minValue) {
+            minValue = Integer.parseInt(arr[i]);
+        }
+         if (Integer.parseInt(arr[i]) > maxValue) {
+            maxValue = Integer.parseInt(arr[i]);
+        }   
+    }
+        answer+= (String.valueOf(minValue) +" " +String.valueOf(maxValue));
+        
+        return answer;
+    }
+}
