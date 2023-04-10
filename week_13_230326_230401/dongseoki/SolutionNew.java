@@ -15,6 +15,15 @@ public class SolutionNew {
         return ansList.stream().mapToInt(x -> x).toArray();
     }
 
+    // ["POOOP", "OXXOX", "OPXPX", "OOXOX", "POXXP"]
+    ->
+    // No.	0	1	2	3	4
+    // 0	P	O	O	O	P
+    // 1	O	X	X	O	X
+    // 2	O	P	X	P	X
+    // 3	O	O	X	O	X
+    // 4	P	O	X	X	P
+    
     public int checkKeepDistance(String[] placeItem) {
         int result = 1;
         int rowLen = placeItem.length;
@@ -24,7 +33,7 @@ public class SolutionNew {
                 if (isItPerson(row, col, placeItem)) {
                     if (!checkMenhatenDistanceForThisPerson(row, col, placeItem)) {
                         result = 0;
-                        break;
+                        return 0;
                     }
                 }
             }
