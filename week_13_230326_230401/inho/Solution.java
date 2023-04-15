@@ -6,7 +6,7 @@ public class Solution {
     public int[] solution(String[][] places) {
         int[] answer = new int[5];//{};
         for(int i =0; i<5; ++i) {
-        	// check ¸Ş¼­µå Á¤ÀÇÇÊ¿ä
+        	// check ë©”ì„œë“œ ì •ì˜í•„ìš”
         	String[] a =places[i];
         	if(check(a)) {
         		answer[i] = 1;
@@ -23,18 +23,18 @@ public class Solution {
     		for(int c =0; c<5 ; ++c) {
     			if(place[r].charAt(c) == 'P') {
     				
-    				//boolean ¹İÈ¯ÇÏ´Â bfs 
-    				//1 ¾î°ÜÁø°æ¿ì 
+    				//boolean ë°˜í™˜í•˜ëŠ” bfs 
+    				//1 ì–´ê²¨ì§„ê²½ìš° 
     				if(bfs(place,r,c)==false) {
     					return false;
     				}
     			}
     		}
     	}
-    	// loop ´Ùµ¹¾Æµµ ÀÌ»ó¾ø´Ù.
+    	// loop ë‹¤ëŒì•„ë„ ì´ìƒì—†ë‹¤.
     	return true; 
     }
-    // bfs ½ÉÇÃÈ­ À§ÇÑ Å¬·¡½º»ı¼º
+    // bfs ì‹¬í”Œí™” ìœ„í•œ í´ë˜ìŠ¤ìƒì„±
     class Point {
     	Point(int r, int c, int d ){
     		row = r;
@@ -43,14 +43,14 @@ public class Solution {
     	}
     	int row,col,dist;
     }
-    //2Â÷¿ø »óÇÏÁÂ¿ì - ¾ÕÀÇ°ÍÀÌ ÇàÀÌ¹Ç·Î 
+    //2ì°¨ì› ìƒí•˜ì¢Œìš° - ì•ì˜ê²ƒì´ í–‰ì´ë¯€ë¡œ 
     int [][] D = { {-1,0},{1,0},{0,-1},{0,1}};
     
     // bfs
     boolean bfs(String[] place, int row,int col) {
     	boolean[][] visited = new boolean[5][5];
     	Queue<Point> q = new LinkedList<>();
-    	//Ãâ¹ß
+    	//ì¶œë°œ
     	visited[row][col]= true;
     	q.add(new Point(row, col, 0));
     	while(!q.isEmpty()) {
@@ -60,20 +60,20 @@ public class Solution {
     			return false;
     		}
     		
-    		//»óÇÏÁÂ¿ìÂî¸£±â
+    		//ìƒí•˜ì¢Œìš°ì°Œë¥´ê¸°
     		for(int i =0;i<4;++i) {
     			int nr= curr.row + D[i][0], nc=curr.col+D[i][1];
     			
-    			if(nr<0 || nr>4 || nc<0 ||nc>4 )continue;//¹âÀ»¼ö¾ø´Â°÷
-    			if(visited[nr][nc])continue;//¹â¾ÆµµÀÇ¹Ì¾øÀ½ 
-    			if(place[nr].charAt(nc)=='X')continue;//ÆÄÆ¼¼ÇÀÓ ¸ø¹âÀ½
-    			//ºñ·Î¼Ò. visted check.
+    			if(nr<0 || nr>4 || nc<0 ||nc>4 )continue;//ë°Ÿì„ìˆ˜ì—†ëŠ”ê³³
+    			if(visited[nr][nc])continue;//ë°Ÿì•„ë„ì˜ë¯¸ì—†ìŒ 
+    			if(place[nr].charAt(nc)=='X')continue;//íŒŒí‹°ì…˜ì„ ëª»ë°ŸìŒ
+    			//ë¹„ë¡œì†Œ. visted check.
     			visited[nr][nc] = true;
     			q.add(new Point(nr,nc,curr.dist+1));
     			
     		}
     	}//END while. 
-    	return true;//ÀÚ¸®¸¦ Àß ÁöÄ×
+    	return true;//ìë¦¬ë¥¼ ì˜ ì§€ì¼°
     	
     }//END bfs 
     
