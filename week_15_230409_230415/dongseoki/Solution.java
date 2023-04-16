@@ -52,8 +52,9 @@ public class Solution {
     private Map initDictionary() {
         Map<String, Integer> numberByWord = new HashMap<>();
         for (int i = 0; i < 26; i++) {
-            numberByWord.put(String.valueOf((char) (i + 65)).toUpperCase(), i + 1);
+            numberByWord.put(String.valueOf((char) (i + 65)), i + 1);
         }
         return numberByWord;
     }
+
 }
